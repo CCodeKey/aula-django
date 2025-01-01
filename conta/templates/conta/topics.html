@@ -1,0 +1,11 @@
+{% extends "conta/base.html" %}
+
+{% block content %}
+<ul>
+    {% for topic in topics%}
+        <li>{{ topic }}</li>
+    {% empty %} <!-- Caso a lista seja vazia -->
+        <li>Não há tópicos adicionados!</li>
+    {% endfor %}
+</ul>
+{% endblock content %}

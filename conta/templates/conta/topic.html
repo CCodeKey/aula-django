@@ -1,0 +1,21 @@
+{% extends "conta/base.html" %}
+
+
+{% block content %}
+
+<h3>Topico: {{topic}}</h3>
+
+<p>Entradas:</p>
+
+<ul>
+    {% for entry in entries %}
+        <li>
+            <p>{{entry.data | date:'M d, Y H:i'}}   </p> <!-- Formatação da data -->
+            <p>{{entry.texto | linebreaks}}</p>  <!-- Quebrando linhas se o texto for muito grande -->
+        </li>
+    {% empty %}
+        <li>Não há registros.</li>
+    {% endfor %}
+</ul>   
+
+{% endblock content %}
